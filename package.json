@@ -1,0 +1,30 @@
+{
+  "name": "web-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:db": "json-server -w ./data/db.json",
+    "start:parcel": "parcel ./static/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonit-dev/ts-web-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonit-dev/ts-web-framework/issues"
+  },
+  "homepage": "https://github.com/jonit-dev/ts-web-framework#readme",
+  "devDependencies": {
+    "axios": "^0.20.0",
+    "json-server": "^0.16.1",
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ]
+}
