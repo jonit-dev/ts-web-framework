@@ -2,10 +2,9 @@ import { User } from './models/User/User.model';
 
 
 const user = new User({
-  id: 1
+  name: 'new record',
+  age: 0
 });
-
-user.set({ name: "NEW NAME", age: 20 });
 
 
 // user.set({
@@ -19,10 +18,10 @@ user.set({ name: "NEW NAME", age: 20 });
 
 // user.trigger('click') 
 
-
 (async () => {
-  await user.fetch()
+  await user.save();
 
+  await user.fetch()
   console.log(user);
 })()
 
