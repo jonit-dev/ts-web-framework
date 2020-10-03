@@ -1,3 +1,5 @@
+import { AxiosResponse } from 'axios';
+
 import { Attributes } from './Attributes';
 import { Eventing } from './Eventing';
 import { Sync } from './Sync';
@@ -28,6 +30,21 @@ export class User {
   set(update: IUser): void {
     this.attributes.set(update)
     this.events.trigger('change')
+  }
+
+  async fetch(): Promise<void> {
+
+    const id = this.attributes.get('id');
+
+    // if we dont have an ID, we dont have it stored on database and we don't need to fetch data
+
+    if (typeof id !== 'number') {
+      throw new Error('Cannot fetch without an ID')
+    }
+
+    const response: AxiosResponse = await this.sync.fetch(id)
+
+    this.set(response.data)
   }
 
 
