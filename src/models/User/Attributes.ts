@@ -6,7 +6,7 @@ export class Attributes<T> {
 
   // K can only be one of the keys of T (IUser)
   // argument will only be of type K (name, age, id)
-  public get<K extends keyof T>(key: K): T[K] {
+  public get = <K extends keyof T>(key: K): T[K] => {
     return this._data[key]
   }
 

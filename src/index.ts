@@ -7,21 +7,10 @@ const user = new User({
 });
 
 
-// user.set({
-//   name: "Martin"
-// })
+user.on('change', () => {
 
-// console.log(user.get("name"));
+  console.log('User was changed!');
 
-// user.on('click', () => console.log('hello'))
-// user.on('click', () => console.log('world'))
+})
 
-// user.trigger('click') 
-
-(async () => {
-  await user.save();
-
-  await user.fetch()
-  console.log(user);
-})()
-
+user.set({ name: 'hello' })
